@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.js"></script>
+  <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v1.6.1/mapbox-gl.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./assets/styles/style.css">
   <title>Fancy Weather App</title>
@@ -64,14 +66,31 @@
           </div>
 
         </div>
-
-        <div id="map">
-
+        <div class="map-container">
+          <div class="map__description">
+            <p class="map__lat">Latitude:</p>
+            <p class="map__long">Longitude:</p>
+          </div>
+          <div id="map"></div>
         </div>
       </div>
 
     </div>
   </main>
+  <script>
+    if (navigator.geolocation)
+      navigator.geolocation.getCurrentPosition((position) => {
+        const long = position.coords.longitude;
+        const lat = position.coords.latitude;
+        mapboxgl.accessToken = 'pk.eyJ1IjoiYW5hc3Rhc2l5YWhvbWFuYXZhIiwiYSI6ImNrNGJ1d2JpMDA1YzIzbG0wanBuOHN4c3gifQ.bkxFpDTeaD2iigLzDYxP4w';
+        var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/mapbox/streets-v11', // stylesheet location
+          center: [long, lat], // starting position [lng, lat]
+          zoom: 9 // starting zoom
+        });
+      })
+  </script>
   <script src="./dist/app.js"></script>
 </body>
 
