@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: -webkit-gradient(linear, left top, left bottom, from(#13023b), to(#2abcd6));
+  background: linear-gradient(#13023b, #2abcd6);
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+.header {
+  margin-top: 50px;
+}
+
+.header__btn, 
+.header__btn-degree, 
+.header__btn-background {
+  padding: 15px;
+  background-color: rgba(30, 26, 43, 0.719);
+  color: #ffffff;
+  text-transform: uppercase;
+  margin: 10px;
+}
+
+.header__btn:hover, 
+.header__btn-degree:hover,
+.header__btn-background:hover {
+  cursor: pointer;
+  background-color: rgba(79, 74, 97, 0.719);
+}
+
+.header__btn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+@media screen and (max-width: 848px) {
+  .header__btn-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
+.flex__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.weather {
+  width: 48%;
+  border: 1px solid rgba(255, 255, 255, 0.795);
+  background-color: rgba(7, 7, 7, 0.678);
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  .weather {
+    width: 100%;
+  }
+}
+
+.weather__location {
+  margin: 25px 0;
+}
+
+.map {
+  width: 48%;
+  height: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.795);
+  border-radius: 10px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.degree-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 32px;
+}
+
+.degree-section__temperature-icon {
+  margin-left: 10px;
+}
+
+.temperature {
+  margin: 20px 0;
+}
+
+.description__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 540px) {
+  .description__section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.weekly__temp {
+  display: flex;
+  justify-content: space-around;
+}
